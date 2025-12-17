@@ -232,7 +232,104 @@ void explainMultiSet() {
 
 }
 
+void explainUSet() {
+	unordered_set<int> st;
+	// lower_bound and upper_bound function
+	// does not work, rest all functions are same
+	// as above, it does not store in order
+	// constant time complexity in most cases, linear complexity in worst case
+}
 
+void explainMap() {
+	// equivalent to dictionaries in python
+	// you will have a key value pair <key, value> which can take any data type
+	// keys are unique and automatically sorted in ascending order
+
+	map<int, int> mpp;
+	map<pair<int,int>,int> mpp_2;
+
+	mpp[1] = 2;
+	mpp.emplace({3, 1});
+	mpp.insert({2,4});
+
+	mpp_2[{2, 3}] = 10;
+
+	for(auto it : mpp) {
+		cout << it.first << " " << it.second << endl; // [{1:2},{2:4},{3:1}] -> key value of 1 and 2 will be printed
+	}
+
+	cout << mpp[1]; // prints 2 (key value of 1)
+	cout << mpp[5]; // does not exist that's why null or 0
+	
+	auto it = mpp.find(3); // gives the iterator to the key value pair of {3,1}
+	cout << *(it).second; // prints the key value
+	
+	auto it = mpp.find(5); // points to mpp.end()
+	
+	auto it = mpp.lower_bound(2);
+	auto it = mpp.upper_bound(3);
+	
+	// erase, swap, size, empty, are same as above
+	
+	// works in logn time
+}
+
+void explainMultiMap(){
+	// everything same as map, but can store duplicate keys aswell
+	// only mpp[key] cannot be used here
+
+}
+
+void explainUnorderedMap(){
+	// same as set and unordered_set difference
+	// most cases O(1) and worst case O(n)
+}
+
+bool comp(pair<int, int> p1, pair<int, int> p2){
+	if(p1.second < p2.second) return true;
+	if(p1.second > p2.second) return false;
+	// only case left is when both the second element in same
+	if (p1.first > p2.second) return true;
+	return false;
+
+void explainExtra() {
+	
+	sort(a, a + n); // will sort all the elements in range [a, a+n)
+	sort(v.begin(),v.end()); // for vector
+	
+	sort(a+2, a+4); // will sort 2nd and 3rd position element
+	
+	sort(a, a+n, greater<int>); // for descending order
+	
+	pair<int, int> a[] = {1,2}, {2,1}, {4,1}};
+
+	// sort it according to second element
+	// if second element is same, then sort
+	// it according to first element but in descending
+	
+	// implementing the comment with comparator logic 
+	sort(a, a+n, comp);
+
+	// {4, 1}, {2, 1}, {1, 2}
+	
+	int num = 7;
+	int cnt = __builtin_popcount(); // counts the number of set bits in binary
+	
+	long long num = 167586578495;
+	int cnt = __builtin_popcountll();
+
+	string s = "123";
+
+	// to find all the permutations of the string ( string has to be sorted beforehand )
+	do {
+		cout << s << endl;
+	} while(next_permutation(s.begin(), s.end());
+	
+	int maxim_num = *max_element(a,a+n); // max_element() give the adress as the output, used * to get the element
+	int minim_num = *min_element(a,a+n); // same as max_element()
+	
+
+}
 
 int main(){
 	
