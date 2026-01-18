@@ -23,7 +23,7 @@ int second_largest_element(int arr[], int n) {
 
 	for (int i = 0; i < n; i++) {
 		
-		if ((arr[i] < ans) && (arr[i] > temp) temp = arr[i];
+		if ((arr[i] < ans) && (arr[i] > temp)) temp = arr[i];
 	}
 
 	ans = temp;
@@ -45,7 +45,7 @@ bool is_array_sorted(int arr[], int n) {
 
 
 // Two-Pointer approach to remove duplicates in-place from a sorted array
-void rem_dup(int arr[]. int n) {
+void rem_dup(int arr[], int n) {
 	
 	int i = 0;
 
